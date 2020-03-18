@@ -1,7 +1,30 @@
 import React, { useState } from "react";
 import "./styles.css";
 
+function Test(props) {
+  console.log(props);
+  return null; //every component MUST return something
+}
+
+function LikeCounter() {
+  const [count, setCount] = useState(0);
+  const increment = () => {
+    setCount(oldCount => oldCount + 1);
+  };
+  const decrement = () => {
+    setCount(oldCount => oldCount - 1);
+  };
+  return (
+    <div>
+      <p>Like Count: {count}</p>
+      <button onClick={increment}> Like </button>
+      <button onClick={decrement}> Dislike </button>
+    </div>
+  );
+}
+
 export default function App() {
+  /**
   const [supCount, setSupCount] = useState(0);
   //useState returns Array with 2 elements: the state and a func that
   //can be called to modify the state.
@@ -22,9 +45,10 @@ export default function App() {
       setSupCount(oldCount => oldCount + 1);
     }
   };
-
+*/
   return (
     <div className="App">
+      {/** 
       <h1>Hello CodeSandbox</h1>
       <h2>Start editing to see some magic happen!</h2>
       <h3>Like Counter</h3>
@@ -33,6 +57,9 @@ export default function App() {
       <button onClick={decrement}> Dislike </button>
       <p />
       <button onClick={superIncrement}> SUPER LIKE </button>
+  **/}
+      <h1>Like Counter</h1>
+      <LikeCounter />
     </div>
   );
 }
